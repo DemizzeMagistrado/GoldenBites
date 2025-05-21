@@ -120,6 +120,11 @@ function getFoodItems() {
   return JSON.parse(localStorage.getItem(FOOD_ITEMS_KEY)) || []
 }
 
+function getCurrentCategory() {
+  const activeTab = document.querySelector(".category-tab.active")
+  return activeTab ? activeTab.dataset.category : "All"
+}
+
 function getFoodItemsSortedBySales() {
   const foodItems = getFoodItems()
   return foodItems.sort((a, b) => b.sales - a.sales)
@@ -297,15 +302,15 @@ function registerUser(name, shopName, email, password, phone) {
 
 // Fix the loginUser function to properly compare passwords
 function loginUser(email, password) {
-  const user = JSON.parse(localStorage.getItem(USER_KEY))
+  const user = JSON.parse(localStorage.getItem(USER_KEY));
 
   if (user && user.email === email && user.password === password) {
-    console.log("Login successful")
-    return user
+    console.log("Login successful");
+    return user;
   }
 
-  console.log("Login failed")
-  return null
+  console.log("Login failed");
+  return null;
 }
 
 function logoutUser() {
@@ -1053,22 +1058,27 @@ function navigateTo(page) {
 // CRUD operations for food items
 function addFoodItem(name, price, image, ingredients, details, category) {
   const foodItems = JSON.parse(localStorage.getItem(FOOD_ITEMS_KEY)) || [];
-  const id = Date.now().toString();
+
   const newItem = {
-    id,
-    name,
-    price,
-    image,
-    ingredients,
-    details,
-    category,
+    id: Date.now().toString(),
+    name: name,
+    price: price,
+    image: image || "/placeholder.svg?height=80&width=80",
+    ingredients: ingredients || "",
+    details: details || "",
+    category: category || "Breakfast",
     rating: 0,
     reviewCount: 0,
+    sales: 0,
+    dateAdded: new Date().toISOString(),
   };
+
   foodItems.push(newItem);
   localStorage.setItem(FOOD_ITEMS_KEY, JSON.stringify(foodItems));
+
   return newItem;
 }
+
 
 function updateFoodItem(id, updates) {
   const foodItems = JSON.parse(localStorage.getItem(FOOD_ITEMS_KEY)) || [];
@@ -1097,10 +1107,19 @@ function displayFoodItems(category = "All") {
 
   if (container) {
     container.innerHTML = "";
-    const filteredItems =
-      category === "All"
-        ? foodItems
-        : foodItems.filter((item) => item.category === category);
+    // Filter items by category if needed
+    let filteredItems = category === "All"
+      ? foodItems
+      : foodItems.filter((item) => item.category === category)
+
+    // Apply search filter
+    const searchInput = document.getElementById("foodSearchInput")
+    const searchQuery = searchInput ? searchInput.value.toLowerCase() : ""
+    if (searchQuery) {
+      filteredItems = filteredItems.filter((item) =>
+        item.name.toLowerCase().includes(searchQuery)
+      )
+    }
     if (foodCount) {
       foodCount.textContent = `Total ${filteredItems.length} Items`;
     }
@@ -1159,6 +1178,8 @@ function setupCategoryTabs() {
     });
   });
 }
+
+
 
 function editFoodItem(id) {
   window.location.href = `add-item.html?edit=${id}`;
