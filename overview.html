@@ -1,0 +1,79 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Bites - Order Summary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="container"> 
+        <div class="header">
+            <div class="back-icon">&#8592;</div>
+            
+            <h1 id="shopNameHeading" class="centered-shop-name">Your Shop</h1>
+            
+            <div class="logo">
+                 <img src="assets/logo.png" class="logo">
+            </div>
+        </div>
+        
+        <div class="summary-header">
+            <div class="summary-title">Order Summary</div>
+            <div class="action-buttons">
+                <button class="btn btn-primary">
+                    Export Data
+                </button>
+            </div>
+        </div>
+        
+        <div class="time-filter">
+            <div class="time-option active">Today</div>
+            <div class="time-option">Yesterday</div>
+            <div class="time-option">Week</div>
+            <div class="time-option">Month</div>
+        </div>
+        
+        <div class="orders-table">
+            <div class="table-header">
+                <div class="table-heading">Product</div>
+                <div class="table-heading">Payment</div>
+                <div class="table-heading">Order ID</div>
+                <div class="table-heading">Order date</div>
+            </div>
+            
+            <div class="order-row">
+                <div class="order-description">Pancake</div>
+                <div class="order-payment">Cash</div>
+                <div class="order-id">S3700</div>
+                <div class="order-date">10-17-2024</div>
+            </div>
+            
+        
+        <div class="nav-bar">
+            <div class="nav-item">
+                <div class="nav-icon">&#127968;</div>
+                <div>Home</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-icon">&#128203;</div>
+                <div>Orders</div>
+            </div>
+            <div class="add-button">+</div>
+            <div class="nav-item">
+                <div class="nav-icon">&#128202;</div>
+                <div>Summary</div>
+            </div>
+            <div class="nav-item active">
+                <div class="nav-icon">&#128200;</div>
+                <div>Sales Report</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/script.js"></script>
+</body>
+</html>

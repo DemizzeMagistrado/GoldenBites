@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Golden Bites</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-header">
+            <div class="back-icon">&#8592;</div>
+            <h1 class="title">Welcome Back</h1>
+            <p class="subtitle">Please sign in to continue</p>
+        </div>
+        <div class="divider"></div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-input" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <div class="password-input-container">
+                    <input type="password" name="password" id="loginPassword" class="form-input" placeholder="Enter your password" required>
+                    <div class="password-toggle" onclick="togglePasswordVisibility('loginPassword', this)">
+                        <img src="assets/eye-close.png" alt="Toggle Password" class="eye-icon">
+                    </div>
+                </div>
+            </div>
+            <div class="remember-forgot">
+                <div class="remember-me">
+                    <input type="checkbox" id="rememberCheckbox" class="remember-checkbox">
+                    <label for="rememberCheckbox">Remember me</label>
+                </div>
+                <a href="#" class="forgot-link">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign In</button>
+            <div class="register-prompt">
+                Don't have an account? <a href="sign-up.html" class="register-link">Register</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="assets/script.js"></script>
+    <script>
+  console.log("Sign-in page loaded");
+</script>
+</body>
+</html>

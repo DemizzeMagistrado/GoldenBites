@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders - Golden Bites</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="back-icon">&#8592;</div>
+            <h1 class="centered-shop-name" id="shopNameHeading">Your Shop</h1>
+            <div class="logo">
+                 <img src="assets/logo.png" class="logo">
+            </div>
+        </div>
+
+        <!-- Food List Link -->
+        <a href="food-list.html" class="food-list-link">Food List</a>
+
+        <!-- Orders Header -->
+        <div class="orders-header">
+            <div class="orders-title" id="pendingOrdersCount">0</div>
+            <div class="orders-subtitle" id="pendingOrdersSubtitle">0 Pending Orders</div>
+        </div>
+
+        <!-- Order Tabs -->
+        <div class="order-tabs">
+            <div class="order-tab active" data-status="pending">Pending <span class="count-badge" id="pendingBadge">0</span></div>
+            <div class="order-tab" data-status="preparing">Preparing <span class="count-badge" id="preparingBadge">0</span></div>
+            <div class="order-tab" data-status="ready">Ready <span class="count-badge" id="readyBadge">0</span></div>
+            <div class="order-tab" data-status="completed">Completed</div>
+            <div class="order-tab" data-status="cancelled">Cancelled</div>
+        </div>
+
+        <!-- Orders List -->
+        <div class="orders-list" id="ordersContainer">
+            <!-- Orders will be loaded here -->
+            <div class="no-items" id="noOrdersMessage">No orders yet. Orders will appear here when customers place them.</div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <div class="nav-item">
+                <div class="nav-icon">🏠</div>
+                <div>Home</div>
+            </div>
+            <div class="nav-item active">
+                <div class="nav-icon">📋</div>
+                <div>Orders</div>
+            </div>
+            <div class="add-button">+</div>
+            <div class="nav-item">
+                <div class="nav-icon">📊</div>
+                <div>Summary</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-icon">📈</div>
+                <div>Sales Report</div>
+            </div>
+        </div>
+
+        <!-- Settings Modal -->
+        <div class="modal" id="settingsModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Settings</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="user-info-section">
+                        <h3>User Information</h3>
+                        <div class="user-info-item">
+                            <label>Name:</label>
+                            <span id="userName">User Name</span>
+                        </div>
+                        <div class="user-info-item">
+                            <label>Shop Name:</label>
+                            <span id="userShopName">Shop Name</span>
+                        </div>
+                        <div class="user-info-item">
+                            <label>Email:</label>
+                            <span id="userEmail">user@example.com</span>
+                        </div>
+                        <div class="user-info-item">
+                            <label>Phone:</label>
+                            <span id="userPhone">+1234567890</span>
+                        </div>
+                        <!-- Working date will be added here by JavaScript -->
+                    </div>
+                    <div class="logout-container">
+                        <button class="btn btn-danger" id="logoutBtn">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+    <script>
+    </script>
+</body>
+</html>

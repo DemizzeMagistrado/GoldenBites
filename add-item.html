@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item - Golden Bites</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="back-icon">&#8592;</div>
+            <h1 id="shopNameHeading" class="centered-shop-name">Your Shop</h1>
+            <div class="logo">
+                 <img src="assets/logo.png" class="logo">
+            </div>        
+        </div>
+
+        <!-- Form Container -->
+        <div class="form-container">
+            <h2 class="form-title" id="formTitle">Add Item</h2>
+            <p class="form-subtitle">Add a new food item to your menu</p>
+
+            <!-- Image Upload -->
+            <div class="image-upload">
+                <div class="upload-box" id="uploadBox">
+                    <div class="upload-icon">&#128247;</div>
+                </div>
+                <div class="upload-box">
+                    <div class="upload-text">Add more photos</div>
+                </div>
+            </div>
+
+            <!-- Item Details -->
+            <div class="form-group">
+                <label class="form-label">Item Name</label>
+                <input type="text" id="itemName" class="form-input" placeholder="Enter item name" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Price (₱)</label>
+                <input type="number" id="itemPrice" class="form-input" placeholder="Enter price" step="0.01" required>
+            </div>
+
+            <!-- Category Selection -->
+            <div class="form-group">
+                <label class="form-label">Category</label>
+                <select id="itemCategory" class="form-input" required>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                    <option value="Chicken">Chicken</option>
+                    <option value="Pork">Pork</option>
+                    <option value="Beef">Beef</option>
+                    <option value="Pasta">Pasta</option>
+                    <option value="Rice">Rice</option>
+                    <option value="Snacks">Snacks</option>
+                    <option value="Drinks & Beverages">Drinks & Beverages</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Ingredients</label>
+                <textarea id="itemIngredients" class="details-textarea" placeholder="List ingredients separated by commas..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Details</label>
+                <textarea id="itemDetails" class="details-textarea" placeholder="Enter item details..."></textarea>
+            </div>
+
+            <button id="saveItemBtn" class="submit-btn">Save Item</button>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <div class="nav-item" onclick="navigateTo('dashboard.html')">
+                <div class="nav-icon">🏠</div>
+                <div>Home</div>
+            </div>
+            <div class="nav-item" onclick="navigateTo('orders.html')">
+                <div class="nav-icon">📋</div>
+                <div>Orders</div>
+            </div>
+            <div class="add-button" onclick="navigateTo('add-item.html')">+</div>
+            <div class="nav-item" onclick="navigateTo('overview.html')">
+                <div class="nav-icon">📊</div>
+                <div>Overview</div>
+            </div>
+            <div class="nav-item" onclick="navigateTo('order-summary.html')">
+                <div class="nav-icon">📈</div>
+                <div>Summary</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAddItemPage();
+        });
+    </script>
+</body>
+</html>
