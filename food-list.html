@@ -21,6 +21,16 @@
         <!-- Food List Title -->
         <h2 class="food-list-title">Food List</h2>
 
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input
+                type="text"
+                id="foodSearchInput"
+                placeholder="Search food..."
+                oninput="displayFoodItems(getCurrentCategory())"
+            >
+        </div>
+
         <!-- Category Tabs -->
         <div class="category-tabs" id="categoryTabs">
             <div class="category-tab active" data-category="All">All</div>
